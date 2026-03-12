@@ -1,7 +1,12 @@
 import axios from "axios";
-import type { MoviesResponse } from "../types/movie";
+import type { Movie } from "../types/movie";
 
 const token = import.meta.env.VITE_TMDB_TOKEN;
+
+interface MoviesResponse {
+  results: Movie[];
+  total_pages: number;
+}
 
 export const fetchMovies = async (
   query: string,
